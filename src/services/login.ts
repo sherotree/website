@@ -44,9 +44,3 @@ export const logout = (): Promise<{ url: string }> => {
     },
   }).then((res) => res.data);
 };
-export const ucLogout = () => {
-  return axios({
-    url: '/api/user/web/login/logout',
-    method: 'post',
-  }).then((res) => res.data).catch((e) => e);
-};

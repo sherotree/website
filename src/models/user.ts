@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { getCurrentUser, login, logout, ucLogout } from '~/services/login';
+import { getCurrentUser, login, logout } from '~/services/login';
 
 import { createStore } from '~/cube';
 
 interface IState {
-  user: USER.IUser
+  user: USER.IUser;
 }
 
 const initState: IState = {
@@ -43,9 +43,13 @@ const userStore = createStore({
       }
     },
     async logout({ call }) {
-      await call(logout);
-      await call(ucLogout);
-      userStore.reducers.clearUser();
+      const data = await call(logout);
+      if (data && data.url) {
+        const url = new URL(data.url);
+        userStore.reducers.clearUser();
+        // temporary: specify the redirectUrl by the FE
+        window.location.href = `${url.origin}${url.pathname}?redirectUrl=${window.location.href}`;
+      }
     },
   },
   reducers: {
