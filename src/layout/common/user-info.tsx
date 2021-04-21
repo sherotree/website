@@ -44,8 +44,10 @@ const UserInfo = () => {
             <ul className="org-list">
               {
                 org.map((item) => {
-                  const { domain, name, displayName, id, logo } = item;
-                  const targetUrl = `//${domain}/${name}`;
+                  const { domain, displayName, id, logo } = item;
+                  // remove name until 4.0
+                  // const targetUrl = `//${domain}/${name}`;
+                  const targetUrl = `//${domain}`;
                   return (
                     <li key={id} className="org-item flex-box px16 my8" onClick={() => { goToPlatform(targetUrl); }}>
                       <Avatar shape="square" className="mr8" src={logo || defaultOrgIcon}>

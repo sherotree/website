@@ -15,7 +15,7 @@
 import i18n from '~/i18n';
 
 export const terminusDomain = 'https://terminus.io';
-export const docDomain = 'https://erda-docs.app.terminus.io';
+export const docDomain = 'https://docs.erda.cloud';
 export const docVersion = 'latest';
 
 export const docUrl = `${docDomain}/${docVersion}/manual`;
