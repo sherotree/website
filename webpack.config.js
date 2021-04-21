@@ -172,14 +172,12 @@ module.exports = () => {
           use: ['@svgr/webpack'],
         },
         {
-          test: /\.(png)$/i,
+          test: /\.(png|jpe?g|gif|svg)$/i,
           use: [{
             loader: 'file-loader',
             options: {
-              name: (a, b) => {
-                console.log(a, b);
-                return 'images/[name].[ext]';
-              },
+              name: '[name].[hash].[ext]',
+              outputPath: 'images',
             },
           }],
         },

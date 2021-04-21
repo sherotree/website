@@ -20,7 +20,7 @@ declare module 'rc-util/lib/Dom/addEventListener'{
   export interface IReturn{
     remove(): any;
   }
-  const fun: (target: Window, eventType: string, cb: (e: Event) => any, options?: boolean | AddEventListenerOptions) => IReturn;
+  const fun: (target: Window | Element, eventType: string, cb: (e: Event) => any, options?: boolean | AddEventListenerOptions) => IReturn;
   export default fun;
 }
 

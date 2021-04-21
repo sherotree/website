@@ -7,7 +7,7 @@
   }
 
   .price-body {
-    min-height: calc(100vh - (330px + #{$footer-height}));
+    @include pageBodyHeight();
 
     .able-mark {
       color: $primary;

@@ -140,14 +140,3 @@ export const footerMenus: Ifooter = {
     subLink: [],
   },
 };
-
-export const copyRights = {
-  text: '2012-2018 terminus.io',
-  recordLicenseNumber: i18n.t('Record/license number: Zhejiang ICP No. 13004315'),
-  recordLicenseAddress: 'https://beian.miit.gov.cn/',
-};
-export const police = {
-  text: i18n.t('Zhejiang Public Network Security No. 33010802003150'),
-  img: '/images/common/police.png',
-  url: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802003150',
-};

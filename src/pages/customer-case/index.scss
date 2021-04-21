@@ -7,13 +7,13 @@
   }
 
   .case-body {
-    min-height: calc(100vh - (330px + #{$footer-height}));
+    @include pageBodyHeight();
     padding: 0 100px;
   }
 
   .nav-wrapper {
     height: 64px;
-    margin: 1.5rem 0;
+    margin-bottom: 1.5rem;
     font-size: 1rem;
     background: $white;
     border-radius: 6px;

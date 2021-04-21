@@ -2,13 +2,31 @@
   .ant-popover-inner-content {
     padding: 0;
 
+    .org-wrapper {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .org-list {
+      max-width: 300px;
+      max-height: 200px;
+      overflow: auto;
+
+      .org-item {
+        cursor: pointer;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
     .erda-user-info-menu-item {
+      max-width: 300px;
       color: $color-dark-8;
       cursor: pointer;
 
       &:hover {
-        color: $white;
-        background-color: $primary;
+        color: $primary;
       }
     }
   }

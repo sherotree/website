@@ -17,36 +17,67 @@ import { Avatar, Popover } from 'antd';
 import userStore from '~/models/user';
 import { Icon as CustomIcon } from 'common';
 import { getParentContainer } from 'common/utils';
+import defaultOrgIcon from '~/images/common/default-org-icon.svg';
 import i18n from '~/i18n';
 import './user-info.scss';
 
-const UserInfo = ({ data }: { data: USER.IUser }) => {
+const UserInfo = () => {
+  const [visible, setVisible] = React.useState(false);
+  const [org, user] = userStore.useStore((s) => [s.orgList, s.user]);
+
+
   const logout = () => {
     userStore.effects.logout();
+    setVisible(false);
   };
-  const goToDice = () => {
-    window.open('/login-dice');
+
+  const goToPlatform = (targetUrl: string) => {
+    setVisible(false);
+    window.open(targetUrl);
   };
 
   const content = (
     <div className="py4">
-      <div className="erda-user-info-menu-item px16 py4" onClick={goToDice}>{i18n.t('enter the platform')}</div>
-      <div className="erda-user-info-menu-item px16 py4" onClick={logout}>{i18n.t('sign out')}</div>
+      {
+        org.length ? (
+          <div className="pb4 org-wrapper">
+            <ul className="org-list">
+              {
+                org.map((item) => {
+                  const { domain, name, displayName, id, logo } = item;
+                  const targetUrl = `//${domain}/${name}`;
+                  return (
+                    <li key={id} className="org-item flex-box px16 my8" onClick={() => { goToPlatform(targetUrl); }}>
+                      <Avatar shape="square" className="mr8" src={logo || defaultOrgIcon}>
+                        {displayName.slice(0, 1).toUpperCase()}
+                      </Avatar>
+                      <span className="flex-1 nowrap">{displayName}</span>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
+        ) : null
+      }
+      <div className="erda-user-info-menu-item px16 py4 logout" onClick={logout}>{i18n.t('sign out')}</div>
     </div>
   );
   return (
     <div className="erda-header-user-wrap">
       <Popover
+        visible={visible}
         placement="bottomRight"
         className="user-info flex-box"
         trigger="click"
-        title={data.nick}
+        title={<p className="py4">{user.nick}</p>}
         content={content}
         overlayClassName="action-wrapper"
+        onVisibleChange={setVisible}
         getPopupContainer={getParentContainer}
       >
-        <Avatar className="mr8" src={data.avatar}>
-          {data.nick.slice(0, 1).toUpperCase()}
+        <Avatar className="mr8" src={user.avatar}>
+          {user.nick.slice(0, 1).toUpperCase()}
         </Avatar>
         <CustomIcon className="unfold fz12" type="unfold" />
       </Popover>

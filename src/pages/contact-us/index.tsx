@@ -17,10 +17,10 @@ import PageContent from '~/layout/common/page-content';
 import { Form, Input, Select, Button } from 'antd';
 import { IT_SIZE, COMPANY_SIZE, PURPOSE, NAME_MAP } from 'pages/contact-us/constant';
 import { getFormFieldsValue } from 'common/utils';
-import { Link } from 'react-router-dom';
 import { submitContactInfo } from '~/services/contact';
 import { CustomModal } from 'common';
 import RegularMap from 'common/utils/reg-rules';
+import { map } from 'lodash';
 import i18n from '~/i18n';
 import './index.scss';
 
@@ -32,6 +32,14 @@ interface IFormData extends CONTACT.contactUs {
 
 const modalInfo = `${i18n.t('submitted successfully!')} \n\r${i18n.t('thank you for your attention! We will contact you as soon as possible!')}`;
 
+const validator = (field: string) => (_rule: unknown, value: any) => {
+  const val = value?.trim();
+  if (val && !RegularMap[field].pattern.test(val)) {
+    return Promise.reject(new Error(RegularMap[field].message));
+  }
+  return Promise.resolve();
+};
+
 
 const ContactUs = () => {
   const [formRef] = Form.useForm();
@@ -41,8 +49,19 @@ const ContactUs = () => {
     setModalVisible(!modalVisible);
   };
 
+  const removeSpace = (field: string) => (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const val = e.target.value;
+    formRef.setFieldsValue({
+      [field]: val.trim(),
+    });
+  };
+
+  const handleCancel = () => {
+    window.history.go(-1);
+  };
+
   const handleChangePurpose = (key: string) => {
-    setShowOtherPurpose(key === '其他');
+    setShowOtherPurpose(key === PURPOSE.other.value);
     formRef.setFieldsValue({
       otherPurpose: undefined,
     });
@@ -58,7 +77,6 @@ const ContactUs = () => {
       rest.purpose = otherPurpose;
     }
     const res = await submitContactInfo(rest).catch((e) => e);
-    console.log(res);
     if (res.success) {
       toggleModal();
     }
@@ -73,62 +91,62 @@ const ContactUs = () => {
         </div>
       </div>
       <PageContent>
-        <Form form={formRef} className="form-wrap" layout="vertical">
+        <Form form={formRef} className="form-wrap pt20" layout="vertical">
           <FormItem
             label={NAME_MAP.realname}
             name="realname"
             rules={[
-              { required: true, message: i18n.t('please enter {realname}', { realname: NAME_MAP.realname }) },
+              { required: true, message: i18n.t('please enter {name}', { name: NAME_MAP.realname }) },
             ]}
           >
-            <Input autoComplete="off" autoFocus placeholder={i18n.t('please enter {realname}', { realname: NAME_MAP.realname })} />
+            <Input autoComplete="off" autoFocus onBlur={removeSpace('realname')} />
           </FormItem>
           <FormItem
             label={NAME_MAP.mobile}
             name="mobile"
             rules={[
-              { required: true, message: i18n.t('please enter {realname}', { realname: NAME_MAP.mobile }) },
-              RegularMap.mobile,
+              { required: true, message: i18n.t('please enter {name}', { name: NAME_MAP.mobile }) },
+              { validator: validator('mobile') },
             ]}
           >
-            <Input autoComplete="off" placeholder={i18n.t('please enter {realname}', { realname: NAME_MAP.mobile })} />
+            <Input autoComplete="off" onBlur={removeSpace('mobile')} />
           </FormItem>
           <FormItem
             label={NAME_MAP.email}
             name="email"
             rules={[
-              { required: true, message: i18n.t('please enter {realname}', { realname: NAME_MAP.email }) },
-              RegularMap.email,
+              { required: true, message: i18n.t('please enter {name}', { name: NAME_MAP.email }) },
+              { validator: validator('email') },
             ]}
           >
-            <Input autoComplete="off" placeholder={i18n.t('please enter {realname}', { realname: NAME_MAP.email })} />
+            <Input autoComplete="off" onBlur={removeSpace('email')} />
           </FormItem>
           <FormItem
             label={NAME_MAP.position}
             name="position"
             rules={[
-              { required: true, message: i18n.t('please enter {realname}', { realname: NAME_MAP.position }) },
+              { required: true, message: i18n.t('please enter {name}', { name: NAME_MAP.position }) },
             ]}
           >
-            <Input autoComplete="off" placeholder={i18n.t('please enter {realname}', { realname: NAME_MAP.position })} />
+            <Input autoComplete="off" onBlur={removeSpace('position')} />
           </FormItem>
           <FormItem
             label={NAME_MAP.company}
             name="company"
             rules={[
-              { required: true, message: i18n.t('please enter {realname}', { realname: NAME_MAP.company }) },
+              { required: true, message: i18n.t('please enter {name}', { name: NAME_MAP.company }) },
             ]}
           >
-            <Input autoComplete="off" placeholder={i18n.t('please enter {realname}', { realname: NAME_MAP.company })} />
+            <Input autoComplete="off" onBlur={removeSpace('company')} />
           </FormItem>
           <FormItem
             label={NAME_MAP.company_size}
             name="company_size"
             rules={[
-              { required: true, message: i18n.t('please choose {size}', { size: NAME_MAP.company_size }) },
+              { required: true, message: i18n.t('please select {name}', { name: NAME_MAP.company_size }) },
             ]}
           >
-            <Select placeholder={i18n.t('please choose {size}', { size: NAME_MAP.company_size })}>
+            <Select>
               {
                 COMPANY_SIZE.map(({ name, value }) => {
                   return <Select.Option value={value} key={value}>{name}</Select.Option>;
@@ -140,10 +158,10 @@ const ContactUs = () => {
             label={NAME_MAP.it_size}
             name="it_size"
             rules={[
-              { required: true, message: i18n.t('please choose {size}', { size: NAME_MAP.it_size }) },
+              { required: true, message: i18n.t('please select {name}', { name: NAME_MAP.it_size }) },
             ]}
           >
-            <Select placeholder={i18n.t('please choose {size}', { size: NAME_MAP.it_size })}>
+            <Select>
               {
                 IT_SIZE.map(({ name, value }) => {
                   return <Select.Option value={value} key={value}>{name}</Select.Option>;
@@ -155,12 +173,12 @@ const ContactUs = () => {
             label={NAME_MAP.purpose}
             name="purpose"
             rules={[
-              { required: true, message: i18n.t('please choose {size}', { size: NAME_MAP.purpose }) },
+              { required: true, message: i18n.t('please select {name}', { name: NAME_MAP.purpose }) },
             ]}
           >
-            <Select placeholder={i18n.t('please choose {size}', { size: NAME_MAP.purpose })} onChange={handleChangePurpose}>
+            <Select onChange={handleChangePurpose}>
               {
-                PURPOSE.map(({ name, value }) => {
+                map(PURPOSE, ({ name, value }) => {
                   return <Select.Option value={value} key={value}>{name}</Select.Option>;
                 })
               }
@@ -172,16 +190,16 @@ const ContactUs = () => {
                 label={NAME_MAP.otherPurpose}
                 name="otherPurpose"
                 rules={[
-                  { required: true, message: i18n.t('please choose {size}', { size: NAME_MAP.otherPurpose }) },
+                  { required: true, message: i18n.t('please enter {name}') },
                 ]}
               >
-                <Input.TextArea autoComplete="off" placeholder={i18n.t('please choose {size}', { size: NAME_MAP.otherPurpose })} autoSize={{ minRows: 3, maxRows: 10 }} />
+                <Input.TextArea autoComplete="off" autoSize={{ minRows: 3, maxRows: 10 }} onBlur={removeSpace('otherPurpose')} />
               </FormItem>
             ) : null
           }
           <div>
             <Button type="primary" onClick={handleSubmit}>{i18n.t('submit')}</Button>
-            <Link className="ant-btn ml12" to="/">{i18n.t('cancel')}</Link>
+            <Button className="ml12" onClick={handleCancel}>{i18n.t('cancel')}</Button>
           </div>
         </Form>
         <CustomModal title={i18n.t('Apply for trial')} visible={modalVisible} toggleModal={toggleModal}>{modalInfo}</CustomModal>

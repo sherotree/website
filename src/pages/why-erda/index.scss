@@ -5,7 +5,7 @@
   }
 
   &-body {
-    min-height: calc(100vh - (330px + #{$footer-height}));
+    @include pageBodyHeight();
     padding: 3.75rem 8.125rem 0;
 
     .reasions {

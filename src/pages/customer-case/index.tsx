@@ -61,7 +61,7 @@ const CustomerCase = () => {
         <div className="title">{i18n.t('success stories')}</div>
         <p className="title-desc px20">{i18n.t('covered 100+ large and medium-sized head enterprises')}</p>
       </div>
-      <PageContent className="case-body">
+      <PageContent className="case-body pt24">
         <div className="nav-wrapper flex-box">
           <div className="nav-items flex-box">
             <p

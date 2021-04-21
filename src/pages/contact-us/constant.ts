@@ -29,13 +29,12 @@ export const IT_SIZE = [
   { value: i18n.t('More than 200 people'), name: i18n.t('More than 200 people') },
 ];
 
-
-export const PURPOSE = [
-  { value: i18n.t('corporate business consulting'), name: i18n.t('corporate business consulting') },
-  { value: i18n.t('join as a partner'), name: i18n.t('join as a partner') },
-  { value: i18n.t('personal study'), name: i18n.t('personal study') },
-  { value: i18n.t('other'), name: i18n.t('other') },
-];
+export const PURPOSE = {
+  advisory: { value: i18n.t('corporate business consulting'), name: i18n.t('corporate business consulting') },
+  partner: { value: i18n.t('join as a partner'), name: i18n.t('join as a partner') },
+  study: { value: i18n.t('personal study'), name: i18n.t('personal study') },
+  other: { value: i18n.t('other'), name: i18n.t('other') },
+};
 
 export const NAME_MAP = {
   realname: i18n.t('actual name'),

@@ -205,8 +205,8 @@ export const specData: SpecItem[] = [
     enterpriseEdition: {
       mini: enterpriseEditionSpec.mini.monitorStorage,
       normal: enterpriseEditionSpec.normal.monitorStorage,
-      pro: enterpriseEditionSpec.plus.monitorStorage,
-      plus: enterpriseEditionSpec.pro.monitorStorage,
+      pro: enterpriseEditionSpec.pro.monitorStorage,
+      plus: enterpriseEditionSpec.plus.monitorStorage,
     },
     privateDeploymentVersion: '-',
   },

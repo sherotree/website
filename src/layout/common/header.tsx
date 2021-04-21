@@ -14,7 +14,6 @@
 
 import * as React from 'react';
 import { throttle, isEmpty } from 'lodash';
-import { Popover } from 'antd';
 import classNames from 'classnames';
 import IntroMenu from './menu';
 import IntroMobileMenu from './menu-mobile';
@@ -25,7 +24,6 @@ import UserInfo from '~/layout/common/user-info';
 import userStore from '~/models/user';
 import { useSiteEnv } from '~/models/env';
 import { Icon } from 'common';
-import i18n, { switchLocale } from '~/i18n';
 import './header.scss';
 
 let mobileMenuOpen = false;
@@ -102,7 +100,7 @@ const Header = ({ onChangeVisible, path }: IProps) => {
           <Icon className="site-logo" type="logo2" />
         </Link>
         <IntroMenu page={path} handlevisibleChange={handlevisibleChange} />
-        {isEmpty(userData) ? <LoginPanel /> : <UserInfo data={userData} />}
+        {isEmpty(userData) ? <LoginPanel /> : <UserInfo/>}
         {/* since the Marketplace and case don't support i18n, hide this button first */}
         {/* <Popover content={i18n.t('common:switch language')} placement="bottom" getPopupContainer={(e) => e.parentElement}> */}
         {/*  <Icon onClick={switchLocale} className="switch-lang ml12" type="i18n" /> */}

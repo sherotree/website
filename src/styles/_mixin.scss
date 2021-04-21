@@ -13,6 +13,11 @@
   }
 }
 
+@mixin pageBodyHeight() {
+  //  330 banner height
+  min-height: calc(100vh - (330px + #{$footer-height}));
+}
+
 @mixin pageHeaderBg() {
   background-image: url(/images/common/case-bg.png);
   background-repeat: no-repeat;

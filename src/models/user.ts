@@ -13,15 +13,20 @@
 // limitations under the License.
 
 import { getCurrentUser, login, logout } from '~/services/login';
+import { getOrgList } from '~/services/org';
 
 import { createStore } from '~/cube';
 
 interface IState {
   user: USER.IUser;
+  orgList: ORG.IOrgItem[];
+  orgHasMore: boolean;
 }
 
 const initState: IState = {
   user: {} as USER.IUser,
+  orgList: [],
+  orgHasMore: false,
 };
 
 const userStore = createStore({
@@ -40,13 +45,23 @@ const userStore = createStore({
       const res = await call(getCurrentUser);
       if (res.success) {
         update({ user: res.data });
+        userStore.effects.getOrgs({ pageNo: 1, pageSize: 100 });
       }
+    },
+
+    async getOrgs({ call, update }, { pageNo, pageSize }: {pageNo: number; pageSize: number}) {
+      const res = await call(getOrgList, { pageSize, pageNo });
+      const { list } = res.data;
+      update({
+        orgList: list || [],
+      });
     },
     async logout({ call }) {
       const data = await call(logout);
       if (data && data.url) {
         const url = new URL(data.url);
         userStore.reducers.clearUser();
+        userStore.reducers.clearOrg();
         // temporary: specify the redirectUrl by the FE
         window.location.href = `${url.origin}${url.pathname}?redirectUrl=${window.location.href}`;
       }
@@ -55,6 +70,9 @@ const userStore = createStore({
   reducers: {
     clearUser(state) {
       state.user = {} as USER.IUser;
+    },
+    clearOrg(state) {
+      state.orgList = [];
     },
   },
 });

@@ -29,7 +29,7 @@ import log from '~/images/home/Pic-log.png';
 import logEn from '~/images/home/Pic-log-en.png';
 import multiCloud from '~/images/home/Pic9.png';
 import multiCloudEn from '~/images/home/Pic9-en.png';
-import banner from '~/images/home/banner/earth.png'
+import banner from '~/images/home/banner/earth.png';
 
 const zhImgMap = {
   banner,
