@@ -29,7 +29,7 @@ const LoginPanel = () => {
         <a onClick={handleLogin} className="bold" target="_blank" rel="noopener noreferrer">{i18n.t('common:Sign In')}</a>
       </span>
       {/* go to the login page temporarily, confirmed with PM */}
-      <a onClick={handleLogin} className="bold free-registration ml20">{i18n.t('common:Sign Up')}</a>
+      {/* <a onClick={handleLogin} className="bold free-registration ml20">{i18n.t('common:Sign Up')}</a> */}
     </div>
   );
 };
