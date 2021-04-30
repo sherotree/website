@@ -25,6 +25,7 @@ interface IConfig {
   multiCloud: IWingProps;
   testManage: ITest;
   api: IWingProps;
+  fdp: IWingProps;
 }
 
 const HomeConfig: IConfig = {
@@ -259,6 +260,47 @@ const HomeConfig: IConfig = {
       title: i18n.t('data bank'),
       description: i18n.t('data bank desc'),
     }],
+  },
+  fdp: {
+    identifier: 'fastDataPlatform',
+    docProps: {
+      title: i18n.t('FDP fast data platform'),
+      description: i18n.t('FDP fast data platform desc'),
+      list: [{
+        icon: 'icon13',
+        key: 'multivariateHeterogeneousDataFusion',
+        title: i18n.t('multivariate heterogeneous data fusion'),
+        description: i18n.t('multivariate heterogeneous data fusion desc'),
+      }, {
+        icon: 'icon22',
+        key: 'dataModelingForBusinessScenarios',
+        title: i18n.t('data modeling for business scenarios'),
+        description: i18n.t('data modeling for business scenarios desc'),
+      }, {
+        icon: 'icon32',
+        key: 'globalDataGovernance',
+        title: i18n.t('global data governance'),
+        description: i18n.t('global data governance desc'),
+      }, {
+        icon: 'icon4',
+        key: 'apiGenerationAndManagement',
+        title: i18n.t('rapid generation and management of api'),
+        description: i18n.t('rapid generation and management of api desc'),
+      }, {
+        icon: 'icon5',
+        key: 'efficientOnlineCollaboration',
+        title: i18n.t('efficient online collaboration'),
+        description: i18n.t('efficient online collaboration desc'),
+      }],
+    },
+    reverse: true,
+    imgProps: {
+      offSet: [-30, 0],
+      src: images.fdp,
+      width: 620,
+      height: 531,
+      className: 'log-analysis-img',
+    },
   },
 };
 

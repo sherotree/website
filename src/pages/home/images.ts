@@ -30,6 +30,7 @@ import logEn from '~/images/home/Pic-log-en.png';
 import multiCloud from '~/images/home/Pic9.png';
 import multiCloudEn from '~/images/home/Pic9-en.png';
 import banner from '~/images/home/banner/earth.png';
+import fdp from '~/images/home/fdp.png';
 
 const zhImgMap = {
   banner,
@@ -45,6 +46,7 @@ const zhImgMap = {
   monitor,
   log,
   multiCloud,
+  fdp,
 };
 
 const enImgMap = {
@@ -61,6 +63,7 @@ const enImgMap = {
   monitor: monitorEn,
   log: logEn,
   multiCloud: multiCloudEn,
+  fdp,
 };
 
 

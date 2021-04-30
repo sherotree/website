@@ -14,19 +14,30 @@
 
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Icon as CustomIcon } from 'common';
 import i18n from '~/i18n';
-
+import notFound from '~/images/common/404.png';
+import envStore from '~/models/env';
 import './error-page.scss';
+import { useMobile } from 'common/utils';
 
 
 const NotFound = () => {
+  const isMobile = useMobile();
+  React.useEffect(() => {
+    envStore.reducers.setHeaderInfo({
+      whiteHeader: true,
+    });
+    return () => {
+      envStore.reducers.resetHeaderInfo();
+    };
+  }, []);
   return (
-    <div className="not-found-page basic-error-page">
+    <div className="not-found-page basic-error-page pt0">
+      <div className="full-width-header v-flex-box" />
       <div className="info gray-bg">
-        <CustomIcon type="404" color />
+        <img className={isMobile ? '' : 'mr40'} width={220} src={notFound} alt="" />
         <div className="desc">
-          <span>{i18n.t('Oh oh, there is nothing here')}</span>
+          <span>{i18n.t('page not found')}</span>
           <Link aria-label="go back to home page" to="/"> {i18n.t('back to homepage')} </Link>
         </div>
       </div>

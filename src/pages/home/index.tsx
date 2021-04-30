@@ -39,6 +39,7 @@ const Home = () => {
       <DoubleWing {...HomeConfig.monitor} />
       <DoubleWing {...HomeConfig.log} />
       <DoubleWing {...HomeConfig.multiCloud} />
+      <DoubleWing {...HomeConfig.fdp} />
       <div className="contact-trial">
         <PageContent>
           <CopmFadeInUp>
