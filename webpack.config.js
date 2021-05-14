@@ -7,7 +7,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer'); // help tailwindcss to work
 const pkg = require('./package.json');
+const WebpckBar = require('webpackbar');
 const getTheme = require('./src/views/antd-theme');
 
 const resolve = (pathname) => path.resolve(__dirname, pathname);
@@ -60,9 +63,9 @@ module.exports = () => {
       app: ['./src'],
     },
     target: isProd ? 'browserslist' : 'web',
-    cache: {
-      type: 'filesystem',
-    },
+    // cache: {
+    //   type: 'filesystem',
+    // },
     resolve: {
       symlinks: false,
       fallback: {
@@ -98,7 +101,15 @@ module.exports = () => {
                 sourceMap: false,
               },
             },
-            'postcss-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  ident: 'postcss',
+                  plugins: [tailwindcss, autoprefixer],
+                },
+              },
+            },
             {
               loader: 'sass-loader',
               options: {
@@ -181,6 +192,16 @@ module.exports = () => {
             },
           }],
         },
+        {
+          test: /\.(mp4)$/i,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'video',
+            },
+          }],
+        },
       ],
     },
     plugins: [
@@ -236,6 +257,7 @@ module.exports = () => {
         'process.env.NODE_ENV': JSON.stringify(nodeEnv),
         'process.env.DICE_VER': JSON.stringify(pkg.version),
       }),
+      new WebpckBar(),
     ],
     optimization: {
       splitChunks: {

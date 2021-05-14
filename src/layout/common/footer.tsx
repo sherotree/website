@@ -27,6 +27,7 @@ const leftConf = [
   { name: 'Cli', url: config.cliUrl },
   { name: 'Securify', url: config.securifyUrl },
   { name: 'ChangeLog', url: config.changeLogUrl },
+  { name: i18n.t('join us'), url: '/join' },
   { name: i18n.t('Zhejiang ICP No. 13004315-6'), url: 'https://beian.miit.gov.cn' },
   { name: i18n.t('Zhejiang Public Network Security No. 33010802003150'), url: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802003150' },
 ];

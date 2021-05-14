@@ -1,16 +1,8 @@
 .basic-error-page {
-  height: 100%;
-
-  .full-width-header {
-    height: $header-height;
-  }
-
   .info {
     display: flex;
     align-items: center;
     justify-content: center;
-    //  330 banner height
-    min-height: calc(100vh - (#{$header-height} + #{$footer-height}));
     padding: 100px 0;
     font-size: 24px;
 

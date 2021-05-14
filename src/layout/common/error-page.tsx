@@ -32,9 +32,8 @@ const NotFound = () => {
     };
   }, []);
   return (
-    <div className="not-found-page basic-error-page pt0">
-      <div className="full-width-header v-flex-box" />
-      <div className="info gray-bg">
+    <div className="not-found-page basic-error-page">
+      <div className="info gray-bg no-banner-body">
         <img className={isMobile ? '' : 'mr40'} width={220} src={notFound} alt="" />
         <div className="desc">
           <span>{i18n.t('page not found')}</span>

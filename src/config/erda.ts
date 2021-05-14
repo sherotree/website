@@ -48,7 +48,6 @@ export const headerMenus: IHeaderItem[] = [
   { name: i18n.t('Documentation'), url: docUrl, jumpOut: true },
   { name: i18n.t('Marketplace'), url: '/market/addon' },
   { name: i18n.t('Success Story'), url: '/customer-case' },
-  // { name: '探索', url: '/', status: 'unrealized' },
   { name: 'GitHub', url: 'https://github.com/erda-project/erda', jumpOut: true },
 ];
 

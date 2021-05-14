@@ -41,7 +41,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "erda check-license -d './src'",
+    "src/**/*.{js,jsx,ts,tsx}": "erda-ui check-license -d './src'",
     "src/**/*.scss": "npm run stylelint:fix",
     "src/**/*.{md,json}": [
       "prettier --write"
@@ -78,6 +78,7 @@
     "resolve-pathname": "^3.0.0",
     "screenfull": "^5.1.0",
     "swagger-parser": "^10.0.2",
+    "tailwindcss": "^2.1.1",
     "util": "^0.12.3"
   },
   "devDependencies": {
@@ -126,6 +127,7 @@
     "less-loader": "^8.0.0",
     "lint-staged": "^10.5.4",
     "mini-css-extract-plugin": "^1.4.1",
+    "postcss-import": "^14.0.1",
     "postcss-loader": "^5.2.0",
     "prettier": "^2.2.1",
     "process": "^0.11.10",
@@ -148,6 +150,7 @@
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3",
-    "webpack-spritesmith": "^1.1.0"
+    "webpack-spritesmith": "^1.1.0",
+    "webpackbar": "^5.0.0-3"
   }
 }

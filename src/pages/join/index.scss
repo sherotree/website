@@ -1,28 +1,53 @@
 .join-erda {
-  padding-top: 0 !important;
-
   .full-width-header {
-    background-image: radial-gradient(28% 104%, #3d33a7 1%, #2a0c5a 100%);
-  }
-
-  &-header {
     height: 330px;
-    text-align: center;
+    @include pageHeaderBg();
+  }
 
-    .title-name {
-      color: $white;
-      font-weight: bold;
-      line-height: 1.75rem;
-      text-align: center;
-    }
+  .body {
+    @include pageBodyHeight();
+  }
 
-    .title-desc {
-      color: $white;
+  .arrows {
+    position: relative;
+    width: 60px;
+    height: 0;
+    border-style: dashed;
+    border-bottom: 2px dotted #5c4ded;
+
+    &:after {
+      position: absolute;
+      top: -4px;
+      right: -18px;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-left-color: #5c4ded;
+      border-left-width: 15px;
+      content: "";
     }
   }
 
-  .title {
-    color: $color-dark-8;
-    text-align: center;
+  .sub-title {
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      width: 65px;
+      height: 16px;
+      background: $primary;
+      opacity: 0.12;
+      content: "";
+    }
+
+    &:before {
+      bottom: 10px;
+      left: 0;
+    }
+
+    &:after {
+      top: 10px;
+      right: 0;
+    }
   }
 }

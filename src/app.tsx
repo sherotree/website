@@ -33,7 +33,8 @@ const CustomerCase = React.lazy(() => import('pages/customer-case'));
 const CustomerCaseDetail = React.lazy(() => import('pages/customer-case/detail'));
 const WhyErda = React.lazy(() => import('pages/why-erda'));
 const Price = React.lazy(() => import('pages/price'));
-// const JoinUs = React.lazy(() => import('pages/join'));
+const JoinUs = React.lazy(() => import('pages/join'));
+const JoinUsDetail = React.lazy(() => import('pages/join/detail'));
 
 const routeList = [
   {
@@ -88,6 +89,18 @@ const routeList = [
     exact: true,
     path: '/price',
     component: Price,
+    title: i18n.t('{title} pricing', { title: 'Erda Cloud - ' }),
+  },
+  {
+    exact: true,
+    path: '/join',
+    component: JoinUs,
+    title: i18n.t('{title} pricing', { title: 'Erda Cloud - ' }),
+  },
+  {
+    exact: true,
+    path: '/join/:categoryId',
+    component: JoinUsDetail,
     title: i18n.t('{title} pricing', { title: 'Erda Cloud - ' }),
   },
   {

@@ -1,6 +1,7 @@
 @import "reset";
 @import "./util.scss";
 @import "./_variable.scss";
+@import "./tailwind.scss";
 
 body {
   min-height: 100vh;
@@ -166,4 +167,8 @@ body {
 
 .visible {
   display: block;
+}
+
+.no-banner-body {
+  min-height: calc(100vh - (#{$header-height} + #{$footer-height}));
 }
