@@ -33,6 +33,11 @@ const leftConf = [
 ];
 const rightConf = [
   {
+    name: 'DDGroup',
+    comp: <img src="/images/common/dd-group.jpg" width={100} height={120} />,
+    icon: 'dingding-o',
+  },
+  {
     name: 'WeChat',
     comp: <img src="/images/common/wechat.png" width={120} height={120} />,
     icon: 'wechat',
@@ -65,7 +70,7 @@ const Footer = () => {
                 </a>
               ) : (
                 <Popover key={item.name} content={comp}>
-                  <CustomIcon className="fz24" type={item.icon} />
+                  <CustomIcon className="fz24 ml16" type={item.icon} />
                 </Popover>
               );
             })

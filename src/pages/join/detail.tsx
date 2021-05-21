@@ -19,7 +19,7 @@ import { RouteComponentProps } from 'react-router';
 import envStore from '~/models/env';
 import { jobs, vitaeEmail, IJobCategory } from 'pages/join/config';
 import { IF } from 'common';
-import { Button } from 'antd';
+import { Button, Popover } from 'antd';
 import addEventListener, { IReturn } from 'rc-util/lib/Dom/addEventListener';
 import { getScrollTop, useMobile } from 'common/utils';
 import { useUpdate } from 'common/utils/hooks';
@@ -76,7 +76,7 @@ const JobDetail = (props: RouteComponentProps<{categoryId: IJobCategory}>) => {
 
   const [currentJob, otherPositionList] = React.useMemo(() => {
     const current = currentCategory.list.find((item) => item.code === jobIndex);
-    const otherPositions = currentCategory.list.filter((item) => item.code !== jobIndex);
+    const otherPositions = currentCategory.list;
     return [current, otherPositions];
   }, [jobIndex]);
 
@@ -110,6 +110,12 @@ const JobDetail = (props: RouteComponentProps<{categoryId: IJobCategory}>) => {
     location.href = `mailto:${vitaeEmail}?subject=应聘${currentJob.name}&body=你好，我从贵公司官网看到此招聘职位。附上我的简历，请查收。`;
   };
 
+  const applyPositionBtn = (
+    <Popover content={`发送简历到：${vitaeEmail}`}>
+      <Button className={`${isMobile ? 'w-full mb-5' : ''}`} type="primary" onClick={handleApplyPosition}>申请职位</Button>
+    </Popover>
+  );
+
   return (
     <div className="bg-F5F7FE">
       <PageContent className="no-banner-body">
@@ -123,7 +129,7 @@ const JobDetail = (props: RouteComponentProps<{categoryId: IJobCategory}>) => {
                 <div className="text-0D0C22 text-30-38 font-semibold">{currentJob.name}</div>
               </div>
               {
-                isMobile ? null : <Button type="primary" onClick={handleApplyPosition}>申请职位</Button>
+                isMobile ? null : applyPositionBtn
               }
             </div>
             <div>
@@ -152,7 +158,12 @@ const JobDetail = (props: RouteComponentProps<{categoryId: IJobCategory}>) => {
                     <ul>
                       {
                           otherPositionList.map((item) => {
-                            return (<li className="text-14-28 text-2F3C5F cursor-pointer hover:text-primary" key={item.code} onClick={() => { handleChangeJob(item.code); }}>{item.name}</li>);
+                            const isCurrent = jobIndex === item.code;
+                            const cls = classNames('text-14-28  cursor-pointer hover:text-primary', {
+                              'text-primary font-semibold': isCurrent,
+                              'text-2F3C5F': !isCurrent,
+                            });
+                            return (<li className={cls} key={item.code} onClick={() => { handleChangeJob(item.code); }}>{item.name}</li>);
                           })
                         }
                     </ul>
@@ -163,7 +174,7 @@ const JobDetail = (props: RouteComponentProps<{categoryId: IJobCategory}>) => {
           }
         </div>
         {
-          isMobile ? <Button className="w-full mb-5" type="primary">申请职位</Button> : null
+          isMobile ? applyPositionBtn : null
         }
       </PageContent>
     </div>

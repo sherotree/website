@@ -40,7 +40,7 @@ export type IJobs = {
 
 export const jobs: IJobs = {
   productExpert: {
-    name: '产品专家',
+    name: '产品',
     logo: 'chanpinzhuanjia',
     description: '',
     list: [
@@ -70,16 +70,16 @@ export const jobs: IJobs = {
     list: [],
   },
   developer: {
-    name: '开发工程师',
+    name: '开发',
     logo: 'kaifagongchengshi',
     description: '',
     list: [
       {
         name: '前端开发专家',
         code: 'D1',
-        teamDesc: 'Erda 前端团队专注于打造国内专业可靠的PaaS平台，支持平台功能开发，负责对接多个后端团队的功能，同时开发维护相关的前端技术工具和产品。加入我们，你将能够了解并塑造PaaS平台前端的技术架构，建设丰富平台的前端体系，掌握专业的敏捷研发流程，探索 UI 自动化测试、前端微服务等有难度的领域，借助Erda开源项目建立个人品牌',
+        teamDesc: 'Erda 前端团队专注于打造国内专业可靠的 PaaS 平台，支持平台功能开发，负责对接多个后端团队的功能，同时开发维护相关的前端技术工具和产品。加入我们，你将能够了解并塑造 PaaS 平台前端的技术架构，建设丰富平台的前端体系，掌握专业的敏捷研发流程，探索 UI 自动化测试、前端微服务等有难度的领域，借助 Erda 开源项目建立个人品牌',
         responsibilities: [
-          '负责讨论设计、开发包括DevOps平台、微服务平台、快数据平台以及云管平台等多个平台的前端架构和产品实现',
+          '负责讨论设计、开发包括 DevOps 平台、微服务平台、快数据平台以及云管平台等多个平台的前端架构和产品实现',
           '负责推动团队的技术栈优化，周边工具生态的建设',
           '带领部分团队人员挑战并解决有难度的问题，优化团队内的知识沉淀分享机制',
           '探索调研业界优秀的竞品，学习并探索我们实现业界领先的路径',
@@ -91,14 +91,14 @@ export const jobs: IJobs = {
           '能够深刻理解产品背后的业务逻辑，对产品发展方向有建设性意见',
           '积极乐观，责任心强，工作认真细致，具备良好的服务意识，具有带团队经验',
           '有优秀开源作品或积极参与维护大型开源项目经验者优先',
-          '有丰富的前端性能优化、安全管控或UI自动化测试经验者优先',
+          '有丰富的前端性能优化、安全管控或 UI 自动化测试经验者优先',
         ],
       },
       {
-        name: 'PaaS平台研发工程师/专家',
+        name: 'PaaS 平台研发工程师/专家',
         code: 'D2',
         responsibilities: [
-          <>从事开源相关工作，参与开源云原生PaaS平台 <a href="https://github.com/erda-project/erda" target="_blank" rel="noopener noreferrer">Erda Project</a> 的架构设计、核心代码和框架的开发，打造稳定、高效的平台服务</>,
+          <>从事开源相关工作，参与开源云原生 PaaS 平台 <a href="https://github.com/erda-project/erda" target="_blank" rel="noopener noreferrer">Erda Project</a> 的架构设计、核心代码和框架的开发，打造稳定、高效的平台服务</>,
           '参与基于开源 PaaS 的 Erda Cloud 开发者平台的核心功能开发',
           '负责 Erda DevOps 平台的研发，提供 DevOps 落地方案 (可选)',
           '负责 Erda 微服务治理平台的研发，提供高可用的微服务引擎托管方案 (可选)',
@@ -121,7 +121,7 @@ export const jobs: IJobs = {
       {
         name: '监控平台开发专家',
         code: 'D3',
-        teamDesc: 'Erda 监控团队专注建设稳定的监控和日志基础设施，为 SaaS 化可观测性APM，日志服务，服务治理，数据治理和IT运维等领域提供智能化驱动和管理加入该团队，你将参与大规模数据挑战下的云原生监控和日志系统的落地实践，从0-1构建企业级场景下的智能运维和大规模弹性PaaS平台',
+        teamDesc: 'Erda 监控团队专注建设稳定的监控和日志基础设施，为 SaaS 化可观测性 APM，日志服务，服务治理，数据治理和 IT 运维等领域提供智能化驱动和管理加入该团队，你将参与大规模数据挑战下的云原生监控和日志系统的落地实践，从 0-1 构建企业级场景下的智能运维和大规模弹性 PaaS 平台',
         responsibilities: [
           '负责 SaaS 化监控和日志平台的基础设施设计和核心代码实现',
           '负责时序存储的核心代码实现 (可选)',
@@ -155,7 +155,7 @@ export const jobs: IJobs = {
         prioritize: [
           '有流处理计算引擎实现的经历',
           '熟悉开源，为开源流处理项目贡献过代码',
-          '熟悉或了解AIOps平台的架构设计和落地实现(日志聚类、根因分析等)',
+          '熟悉或了解 AIOps 平台的架构设计和落地实现(日志聚类、根因分析等)',
         ],
       },
       {
@@ -168,17 +168,17 @@ export const jobs: IJobs = {
         requirements: [
           '熟练掌握 Java 或 Golang 开发语言，熟悉数据结构和算法',
           '熟悉 Docker、Kubernetes 相关的技术，有相关的使用、运维经验',
-          '熟悉分布式系统的设计和建设，熟悉分布式缓存（Memcached，Redis 等）、存储（Minio、Glusterfs、Cassandra、ElasticSearch 等）、消息（RocketMQ、Kafka 等）等主流中间件其中至少2个',
+          '熟悉分布式系统的设计和建设，熟悉分布式缓存（Memcached，Redis 等）、存储（Minio、Glusterfs、Cassandra、ElasticSearch 等）、消息（RocketMQ、Kafka 等）等主流中间件其中至少 2 个',
         ],
         prioritize: [
           '熟悉容器技术，如 Docker、Kubernetes、Mesos 等，深入了解源码',
           '熟悉 Linux 内核、网络、分布式存储、中间件（其中一项），做过相关开发',
-          '了解任一主流中间件背后的原理，能对分布式常用技术进行合理应用，解决线上问题，提升服务平台稳定性，有源码Debug能力',
+          '了解任一主流中间件背后的原理，能对分布式常用技术进行合理应用，解决线上问题，提升服务平台稳定性，有源码 Debug 能力',
           '有自动化运维平台开发经验',
         ],
       },
       {
-        name: 'SRE工程师/专家',
+        name: 'SRE 工程师/专家',
         code: 'D6',
         responsibilities: [
           '负责容器云/大数据平台基础设施的稳定性，可靠性',
@@ -188,22 +188,22 @@ export const jobs: IJobs = {
           '提供相关产品的最佳实践，帮助企业客户提高业务架构的高效与稳定性',
         ],
         requirements: [
-          '本科以上学历，计算机相关专业，有3年及以上工作经验',
+          '本科以上学历，计算机相关专业，有 3 年及以上工作经验',
           '熟悉 C/C++/Go/Java/Python 一种或者多种语言，熟悉常见数据结构和算法',
           '丰富的 Linux 系统运维、优化经验，对常见问题故障有处理经验，并能系统性总结',
           '熟悉 Docker、Kubernetes 相关的技术，有相关的使用、运维经验',
-          '熟悉分布式系统的设计和建设，熟悉分布式缓存（Memcached，Redis 等）、存储（Minio、Glusterfs、Cassandra、ElasticSearch 等）、消息（RocketMQ、Kafka 等）等主流中间件其中至少2个',
+          '熟悉分布式系统的设计和建设，熟悉分布式缓存（Memcached，Redis 等）、存储（Minio、Glusterfs、Cassandra、ElasticSearch 等）、消息（RocketMQ、Kafka 等）等主流中间件其中至少 2 个',
           '有 Owner 意识，具备较强的逻辑思考、学习能力，有强烈的责任心，抗压能力强',
         ],
         prioritize: [
           '熟悉容器技术，如 Docker、Kubernetes、Mesos 等，深入了解源码',
           '熟悉 Linux 内核、网络、分布式存储、中间件（其中一项），做过相关开发',
-          '了解任一主流中间件背后的原理，能对分布式常用技术进行合理应用，解决线上问题，提升服务平台稳定性，有源码Debug能力',
+          '了解任一主流中间件背后的原理，能对分布式常用技术进行合理应用，解决线上问题，提升服务平台稳定性，有源码 Debug 能力',
           '有自动化运维平台开发经验',
         ],
       },
       {
-        name: 'Java开发工程师（SaaS方向）',
+        name: 'Java 开发工程师（SaaS 方向）',
         code: 'D7',
         responsibilities: [
           '负责 Cloud 平台运营功能的设计与开发实现',
@@ -220,15 +220,15 @@ export const jobs: IJobs = {
     ],
   },
   testDeveloper: {
-    name: '测试开发工程师',
+    name: '测试',
     logo: 'ceshikaifagongchengshi',
-    description: 'T1',
+    description: '',
     list: [
       {
         name: '测试开发工程师',
-        code: '',
+        code: 'T1',
         responsibilities: [
-          '参与PaaS平台的需求分析，制定测试计划和测试方案',
+          '参与 PaaS 平台的需求分析，制定测试计划和测试方案',
           '独立设计和执行设计用例，进行缺陷跟踪，根据测试结果完成测试报告',
           '对测试过程中发现的软件质量问题进行分析和定位、与开发人员、需求人员积极有效沟通，推动问题解决',
           '参与平台相关自动化测试、性能、稳定性测试',
@@ -243,7 +243,7 @@ export const jobs: IJobs = {
     ],
   },
   operationsExpert: {
-    name: '运营专家',
+    name: '运营',
     logo: 'yunyingzhuanjia',
     description: '',
     list: [],
