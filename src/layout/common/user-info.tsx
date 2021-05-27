@@ -44,10 +44,8 @@ const UserInfo = () => {
             <ul className="org-list">
               {
                 org.map((item) => {
-                  const { domain, displayName, id, logo } = item;
-                  // remove name until 4.0
-                  // const targetUrl = `//${domain}/${name}`;
-                  const targetUrl = `//${domain}`;
+                  const { domain, displayName, id, logo, name } = item;
+                  const targetUrl = `//${domain}/${name}`;
                   return (
                     <li key={id} className="org-item flex-box px16 my8" onClick={() => { goToPlatform(targetUrl); }}>
                       <Avatar shape="square" className="mr8" src={logo || defaultOrgIcon}>
@@ -60,7 +58,16 @@ const UserInfo = () => {
               }
             </ul>
           </div>
-        ) : null
+        ) : (
+          <div className="pb4 org-wrapper px16">
+            <p onClick={() => {
+              window.open('/login-dice');
+            }} className="hover:text-primary cursor-pointer">
+              探索组织
+              <CustomIcon className="ml-1" type="Rightarrow"/>
+            </p>
+          </div>
+        )
       }
       <div className="erda-user-info-menu-item px16 py4 logout" onClick={logout}>{i18n.t('sign out')}</div>
     </div>

@@ -5,7 +5,7 @@ const fs = require('fs');
 const prodEnv = 'https://terminus-org.dev.terminus.io';
 // const prodEnv = 'https://terminus-org.app.terminus.io';
 
-const backendUrl = 'https://terminus-org.dev.terminus.io';
+const backendUrl = 'https://dice.dev.terminus.io';
 const frontUrl = `local.${backendUrl.replace(/http(s?):\/\//, '')}`; // local与对应环境根域名一致
 const port = 8007;
 
@@ -38,8 +38,9 @@ const devServer = {
       secure: false,
     },
     '/api': {
-      target: prodEnv,
+      target: backendUrl,
       changeOrigin: true,
+      pathRewrite: { '^/api': '/api/-' },
       secure: false,
     },
   },
