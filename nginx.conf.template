@@ -39,6 +39,7 @@ server {
     location / {
         index index.html;
         try_files /index.html =404;
+        add_header 'Cache-Control' 'no-store';
     }
 
     location /login-dice {
