@@ -3,7 +3,7 @@ proxy_hide_header Content-Disposition;
 server {
     listen       80 default_server;
     listen       [::]:80 default_server;
-    root         /usr/share/nginx/html; # dice | gts
+    root         /usr/share/nginx/html; 
 
     #service worker
     location = /sw.js {
@@ -41,7 +41,7 @@ server {
         try_files /index.html =404;
     }
 
-    location /login-dice {
+    location /login-erda {
         return 302 ${LOGIN_URL};
     }
 

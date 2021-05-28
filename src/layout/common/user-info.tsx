@@ -61,7 +61,7 @@ const UserInfo = () => {
         ) : (
           <div className="pb4 org-wrapper px16">
             <p onClick={() => {
-              window.open('/login-dice');
+              window.open('/login-erda');
             }} className="hover:text-primary cursor-pointer">
               探索组织
               <CustomIcon className="ml-1" type="Rightarrow"/>

@@ -1,6 +1,6 @@
 version: 2
 services:
-  dice-site:
+  erda-site:
     resources:
       cpu: 0.1
       max_cpu: 1
@@ -8,7 +8,7 @@ services:
     deployments:
       replicas: 2
       labels:
-        GROUP: "dice"
+        GROUP: "erda"
     ports:
       - 80
     expose:
@@ -24,21 +24,21 @@ services:
 environments:
   development:
     services:
-      dice-site:
+      erda-site:
         resources:
           mem: 256
         deployments:
           replicas: 1
   test:
     services:
-      dice-site:
+      erda-site:
         resources:
           mem: 256
         deployments:
           replicas: 1
   staging:
     services:
-      dice-site:
+      erda-site:
         resources:
           mem: 256
         deployments:

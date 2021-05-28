@@ -53,7 +53,7 @@ const MenuDrawer = ({ name, subList, handlevisibleChange, page }: IPropsMenuDraw
     <>
       <a onClick={handleClick} className="bold-600">{name}</a>
       <Drawer
-        getContainer={document.getElementsByClassName('dice-default-layout')[0] as HTMLElement}
+        getContainer={document.getElementsByClassName('erda-default-layout')[0] as HTMLElement}
         className="menu-drawer"
         placement="top"
         visible={visible}

@@ -17,11 +17,11 @@ stages:
   - stage:
     - release:
         params:
-          dice_yml: ${git-checkout}/dice.yml
+          erda_yml: ${git-checkout}/erda.yml
           image:
-            dice-site: ${js:OUTPUT:image}
+            erda-site: ${js:OUTPUT:image}
 
   - stage:
-    - dice:
+    - erda:
         params:
           release_id_path: ${release}

@@ -50,7 +50,7 @@ const Home = () => {
               <div
                 className="btn-item free-trial center-flex-box"
                 onClick={() => {
-                  window.open('/login-dice');
+                  window.open('/login-erda');
                 }}
               >{i18n.t('common:free trial')}
               </div>

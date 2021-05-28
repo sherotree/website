@@ -34,8 +34,8 @@ const PageLayout = ({ children, location }: IProps) => {
     setHeadShow(vis);
   };
   const wrapperClassName = classNames({
-    'dice-default-layout': true,
-    'theme-dice': true,
+    'erda-default-layout': true,
+    'theme-erda': true,
     'only-main': onlyMain,
 
   });
@@ -45,7 +45,7 @@ const PageLayout = ({ children, location }: IProps) => {
         {
           onlyMain ? null : <Header path={location.pathname} onChangeVisible={changeHeadVisible} />
         }
-        <main className="dice-site-content">
+        <main className="erda-site-content">
           {children}
         </main>
         {
