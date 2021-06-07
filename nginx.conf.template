@@ -34,6 +34,7 @@ server {
     #static files
     location ~* ^.*\.(json|jpg|jpeg|gif|svg|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
         expires 30d;
+        add_header 'Cache-Control' 'no-cache';
     }
 
     location / {
