@@ -255,7 +255,7 @@ module.exports = () => {
       ),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(nodeEnv),
-        'process.env.DICE_VER': JSON.stringify(pkg.version),
+        'process.env.ERDA_VER': JSON.stringify(pkg.version),
       }),
       new WebpckBar(),
     ],

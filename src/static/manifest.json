@@ -1,7 +1,7 @@
 {
   "short_name": "Erda Cloud",
   "name": "Erda Cloud Site",
-  "description": "Dice official site powered by terminus",
+  "description": "Erda official site powered by terminus",
   "icons": [
     {
       "src": "/static/favicon.ico",

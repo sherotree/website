@@ -34,7 +34,7 @@ const Banner = () => {
           <Button
             className="erda-home-banner-free-trial mt24"
             onClick={() => {
-              window.open('/login-dice');
+              window.open('/login-erda');
             }}
           >{i18n.t('free trial')}
           </Button>

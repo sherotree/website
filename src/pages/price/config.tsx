@@ -20,9 +20,9 @@ import { goTo } from 'common/utils';
 
 export type IVersion = 'freeVersion' | 'enterpriseEdition' | 'privateDeploymentVersion';
 export type abilityScope = 'devOps' | 'microService' | 'multi-cloudManagement';
-export type ISpecType = 'mini'|'normal'|'pro'| 'plus';
+export type ISpecType = 'mini' | 'normal' | 'pro' | 'plus';
 
-export const versionMap: {[k in IVersion]: string} = {
+export const versionMap: { [k in IVersion]: string } = {
   freeVersion: '免费版',
   enterpriseEdition: '企业版',
   privateDeploymentVersion: '私有部署版',
@@ -36,7 +36,7 @@ export type Item = {
   key: string;
 };
 
-export interface SpecItem{
+export interface SpecItem {
   key: string;
   name: string;
   freeVersion: string;
@@ -46,7 +46,7 @@ export interface SpecItem{
   privateDeploymentVersion: string;
 }
 
-interface IAbilitiesTreeItem{
+interface IAbilitiesTreeItem {
   children: Item[];
   name: string;
   key: abilityScope;
@@ -74,12 +74,12 @@ const renderSpec = (cellData: any, record: SpecItem): React.ReactNode => {
   return cellData;
 };
 
-const enterpriseEditionSpec: {[k in ISpecType]: {
+const enterpriseEditionSpec: { [k in ISpecType]: {
   key: k;
   cpuCore: Array<string>;
   price: string;
   monitorStorage: string;
-}} = {
+} } = {
   mini: {
     key: 'mini',
     cpuCore: ['<= 80 Core', '按 8 核算，10 节点'],
@@ -111,12 +111,12 @@ const versionInfo: {
     LinkComp?: React.ReactNode;
     bottomComp: React.ReactNode;
     tip?: string;
-    pricingStrategies: Array<{ key: string; priceInPc?: React.ReactNode; price?: React.ReactNode; specification: React.ReactNode; gift?: React.ReactNode}>;
+    pricingStrategies: Array<{ key: string; priceInPc?: React.ReactNode; price?: React.ReactNode; specification: React.ReactNode; gift?: React.ReactNode }>;
   }
 } = {
   freeVersion: {
     name: versionMap.freeVersion,
-    bottomComp: <Button type="primary" onClick={() => { window.open('/login-dice'); }}>立即体验</Button>,
+    bottomComp: <Button type="primary" onClick={() => { window.open('/login-erda'); }}>立即体验</Button>,
     tip: 'DevOps 平台部分内容',
     pricingStrategies: [{
       key: 'A',

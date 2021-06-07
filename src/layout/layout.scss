@@ -1,9 +1,9 @@
-.dice-default-layout {
+.erda-default-layout {
   display: flex;
   flex-direction: column;
   background: $color-white-7;
 
-  .dice-site-content {
+  .erda-site-content {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -16,7 +16,7 @@
   }
 
   &.only-main {
-    .dice-site-content {
+    .erda-site-content {
       > section:first-child,
       > div:first-child {
         padding-top: 0;
@@ -25,7 +25,7 @@
   }
 
   @include sm-width() {
-    .dice-site-content {
+    .erda-site-content {
       > section:first-child,
       > div:first-child {
         padding-top: $mobile-header-height;
