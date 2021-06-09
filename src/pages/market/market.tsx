@@ -60,11 +60,12 @@ const tabList = [
     name: i18n.t('library'),
     key: 'library',
     icon: 'k2x',
-  }, {
-    name: i18n.t('mobile application'),
-    key: 'mobile',
-    icon: 'ydyy2x',
-  },
+  }, 
+//   {
+//     name: i18n.t('mobile application'),
+//     key: 'mobile',
+//     icon: 'ydyy2x',
+//   },
 ];
 
 
