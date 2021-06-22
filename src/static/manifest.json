@@ -7,7 +7,12 @@
       "src": "/static/favicon.ico",
       "type": "image/png",
       "sizes": "200x200"
-    }
+    },
+    {
+      "src": "/static/logo128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
   ],
   "start_url": "/",
   "background_color": "#5d48df",
