@@ -1,0 +1,326 @@
+.erda-home {
+  background-color: #ffffff;
+
+  .card-title {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-align: center;
+
+    &-height-light {
+      color: #5c4ded;
+    }
+  }
+
+  .card-desc {
+    color: rgba(40, 60, 95, 0.7);
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: center;
+
+    .link-to {
+      display: inline-block;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+  }
+
+  &-banner {
+    position: relative;
+    height: 750px;
+    padding-top: 210px;
+    background-image: radial-gradient(28% 104%, #3d33a7 1%, #2a0c5a 100%);
+
+    &-mask {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      background-image: url(/images/home/banner/background.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: translateX(-50%);
+    }
+
+    .earth {
+      position: absolute;
+      top: -110px;
+      right: 0;
+      width: 550px;
+      height: 550px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-title {
+      color: #f7f9ff;
+      font-weight: bolder;
+      font-size: 60px;
+      line-height: 72px;
+    }
+
+    &-desc {
+      width: 665px;
+      color: #f7f9ff;
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    &-free-trial {
+      &.ant-btn {
+        width: 130px;
+        height: 48px;
+        color: #1c1370;
+        font-size: 18px;
+        background: #ffffff;
+        border: 1px solid #ffffff;
+        border-radius: 3px;
+
+        &:hover,
+        &:focus {
+          background: #ffffff;
+          border: 1px solid #ffffff;
+        }
+      }
+    }
+
+    &:after {
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 60px;
+      //background-image: radial-gradient(28% 104%, #3D33A7 1%, #2A0C5A 100%);
+      background-image: url(/images/home/banner/bannermask.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: "";
+    }
+  }
+
+  &-main-card {
+    margin-top: -70px;
+    padding: 50px 70px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 16px 2px rgba(92, 77, 237, 0.08);
+
+    .img-wrapper {
+      text-align: center;
+    }
+  }
+
+  &-pm {
+    padding: 80px 0;
+
+    .img-wrapper {
+      position: relative;
+      width: 800px;
+      height: 300px;
+      margin: 0 auto;
+
+      .erda-lazyload-img-wrap {
+        position: absolute;
+
+        &.main-img {
+          top: 0;
+          left: 0;
+        }
+
+        &.male {
+          top: -20px;
+          right: -30px;
+        }
+
+        &.female {
+          right: 60px;
+          bottom: -40px;
+        }
+      }
+    }
+  }
+
+  &-test-manage {
+    padding: 80px 0;
+    background: #f7f9ff;
+
+    &-body {
+      margin-top: 72px;
+
+      .item {
+        width: 320px;
+        text-align: center;
+
+        .icon {
+          width: 80px;
+          height: 80px;
+          //background-size: 100% 100%;
+        }
+
+        .title {
+          height: 28px;
+          color: #0d0c22;
+          font-weight: 600;
+          font-size: 20px;
+        }
+
+        .desc {
+          color: rgba(47, 60, 95, 0.4);
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  .contact-trial {
+    padding: 100px 0;
+    background: #5c4ded;
+
+    .title {
+      color: $white;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 48px;
+      text-align: center;
+    }
+
+    .btns {
+      .btn-item {
+        width: 140px;
+        height: 48px;
+        margin: 0 10px;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .free-trial {
+        color: $primary;
+        background: $white;
+      }
+
+      .contact {
+        color: $white;
+        border: 1px solid $white;
+
+        &:hover {
+          color: $primary;
+          background: $white;
+        }
+      }
+    }
+  }
+
+  @include sm-width() {
+    .text-column {
+      .card-title,
+      .card-desc {
+        text-align: center;
+      }
+    }
+
+    .code-repositories .monitor,
+    .cicd,
+    .log-analysis {
+      padding: 2.5rem 0;
+    }
+
+    .contact-trial {
+      padding: 3.75rem 0;
+
+      .title {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+      }
+    }
+
+    .card-title {
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+
+    .card-desc {
+      line-height: 1.75rem;
+    }
+
+    .erda-home {
+      &-banner {
+        height: 31.5rem;
+        padding: 1.25rem;
+        padding-top: 7rem;
+
+        .earth {
+          display: none;
+        }
+
+        &-title {
+          font-size: 2.5rem;
+        }
+
+        &-desc {
+          width: 100%;
+          font-size: 1rem;
+        }
+
+        &:after {
+          bottom: -0.625rem;
+          height: 30px;
+          background-size: 100% 30px;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+
+      &-main-card {
+        width: calc(100vw - 2.5rem);
+        margin-top: -2.25rem;
+        padding: 1.875rem 1.25rem;
+      }
+
+      &-pm {
+        width: 100%;
+        padding: 2.5rem 0;
+
+        .img-wrapper {
+          width: 100%;
+          height: auto;
+          margin-top: 1.25rem !important;
+
+          .erda-lazyload-img-wrap {
+            &.main-img {
+              position: relative;
+              margin: 0 -0.625rem;
+            }
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &-test-manage {
+        padding: 2.5rem 0;
+
+        &-body {
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 2rem;
+
+          .item {
+            margin-top: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

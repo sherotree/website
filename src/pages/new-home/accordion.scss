@@ -1,0 +1,68 @@
+.erda-accordion {
+  .erda-accordion-header {
+    &-icon {
+      width: 30px;
+      height: 32px;
+      overflow: hidden;
+
+      i {
+        font-size: 30px;
+      }
+    }
+
+    &-text {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+
+  .ant-collapse-item.ant-collapse-no-arrow > .ant-collapse-header {
+    padding-bottom: 8px;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box {
+    padding-top: 0;
+  }
+
+  .erda-accordion-body {
+    min-height: 56px;
+    color: rgba(40, 69, 95, 0.7);
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .ant-collapse-item {
+    border: none;
+  }
+
+  .ant-collapse-item-active {
+    position: relative;
+    background-color: #ececfe;
+    border-radius: 2px 8px 8px 2px;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 8px;
+      background-image: linear-gradient(180deg, #b2a7f9 0%, #5347cd 100%);
+      border-radius: 2px 0 0 2px;
+      content: "";
+    }
+
+    .ant-collapse-content {
+      background: transparent;
+      border: none;
+    }
+  }
+
+  .ant-collapse-content {
+  }
+}
