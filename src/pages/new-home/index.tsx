@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <div className="erda-home pt0">
       <Banner />
-      <MainCard />
+      {/* <MainCard /> */}
       <ProjectManagement />
       <DoubleWing {...HomeConfig.codeRepositories} />
       <DoubleWing {...HomeConfig.api} />

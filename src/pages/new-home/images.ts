@@ -32,6 +32,10 @@ import multiCloudEn from '~/images/home/Pic9-en.png';
 import banner from '~/images/home/banner/earth.png';
 import fdp from '~/images/home/fdp.png';
 
+// new home
+import headerIcon from '~/images/home/home-images/header-icon.png';
+import headerAnimation from '~/images/home/home-images/header-animation.png';
+
 const zhImgMap = {
   banner,
   mainLeft,
@@ -47,6 +51,8 @@ const zhImgMap = {
   log,
   multiCloud,
   fdp,
+  headerIcon,
+  headerAnimation,
 };
 
 const enImgMap = {
@@ -64,6 +70,8 @@ const enImgMap = {
   log: logEn,
   multiCloud: multiCloudEn,
   fdp,
+  headerIcon,
+  headerAnimation,
 };
 
 

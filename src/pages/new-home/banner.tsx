@@ -22,25 +22,92 @@ import images from './images';
 const Banner = () => {
   return (
     <div className="erda-home-banner">
-      <div className="erda-home-banner-mask" />
+      {/* <div className="erda-home-banner-mask" /> */}
       <PageContent>
         <CopmFadeInUp delay={0}>
-          <div className="erda-home-banner-title">Erda Cloud</div>
+          <img width={152} height={38} src={images.headerIcon} alt="" />
         </CopmFadeInUp>
         <CopmFadeInUp delay={100}>
-          <div className="erda-home-banner-desc mt16">{i18n.t('a one-stop enterprise digital platform based')}</div>
+          <div className="text-newPrimary mt-5 text-24-32" >Erda 开源开放，共建研发运营新生态</div>
+        </CopmFadeInUp>
+        <CopmFadeInUp delay={100}>
+          <div className="text-desc mt-2.5 text-16-32 w-p430 text-justify">包含混合云管理、DevOps、微服务观测治理以及快数据治理等平台级服务能力，为企业和开发者提供稳定可靠、功能全面、兼容生态、开源开放的云原生 PaaS 平台和最佳实践</div>
         </CopmFadeInUp>
         <CopmFadeInUp delay={200}>
           <Button
-            className="erda-home-banner-free-trial mt24"
+            className="text-18-24 text-white mt-10 w-p130 h-12 rounded-md border-white py-3 px-7 bg-gradient-to-tl from-newPrimary to-lightPrimary"
             onClick={() => {
               window.open('/login-erda');
             }}
           >{i18n.t('free trial')}
           </Button>
         </CopmFadeInUp>
+        <CopmFadeInUp delay={300}>
+          <div className="mt-64 flex justify-between" >
+            <div className="flex flex-col items-center" >
+              <div className="font-bold" >
+                <span className="text-cyan text-44-60">50</span>
+                <span className="text-2xl">+</span>
+              </div>
+              <div>
+                <span className="text-base text-desc mt-2
+                "
+                >已服务50+ 行业客户
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col items-center" >
+              <div className="font-bold" >
+                <span className="text-cyan text-44-60">100</span>
+                <span className="text-2xl">+</span>
+              </div>
+              <div>
+                <span className="text-base text-desc mt-2
+                "
+                >运维管理100+ K8S集群
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col items-center" >
+              <div className="font-bold" >
+                <span className="text-cyan text-44-60">70</span>
+                <span className="text-2xl">W+</span>
+              </div>
+              <div>
+                <span className="text-base text-desc mt-2
+                "
+                >70W 行代码全部开源
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col items-center" >
+              <div className="font-bold" >
+                <span className="text-cyan text-44-60">5</span>
+                <span className="text-2xl">+</span>
+              </div>
+              <div>
+                <span className="text-base text-desc mt-2
+                "
+                >覆盖多个全球性区域
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col items-center" >
+              <div className="font-bold" >
+                <span className="text-cyan text-44-60">40</span>
+                <span className="text-2xl">+</span>
+              </div>
+              <div>
+                <span className="text-base text-desc mt-2
+                "
+                >共计发布 40+ 版本
+                </span>
+              </div>
+            </div>
+          </div>
+        </CopmFadeInUp>
         <div className="earth">
-          <img width={550} height={550} src={images.banner} alt="" />
+          <img width={634} height={366} style={{ position: 'absolute', top: '80px', left: '-40px' }} src={images.headerAnimation} alt="" />
         </div>
       </PageContent>
     </div>

@@ -1,5 +1,10 @@
 const colorMap = {
   primary: 'rgb(93,72,223)',
+  newPrimary: '#6B4FBB',
+  lightPrimary: '#C7B3FF',
+  desc: '#666666',
+  white: '#ffffff',
+  cyan: '#333333',
   E1DEFB: 'rgb(225,222,251)',
   '2F3C5F': 'rgb(47,60,95)',
   '0D0C22': 'rgb(13,12,34)',
@@ -8,11 +13,13 @@ const colorMap = {
 };
 module.exports = {
   purge: ['./src/**/*.tsx'],
+  important: true,
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: colorMap,
       spacing: {
+        p130: '130px',
         p430: '430px',
         p720: '720px',
         p260: '260px',
@@ -22,12 +29,15 @@ module.exports = {
         '14-28': ['14px', '28px'],
         '16-28': ['16px', '28px'],
         '16-32': ['16px', '32px'],
+        '18-24': ['18px', '24px'],
         '20-28': ['20px', '28px'],
         '20-32': ['20px', '32px'],
+        '24-32': ['24px', '32px'],
         '28-36': ['28px', '36px'],
         '30-38': ['30px', '38px'],
         '32-44': ['32px', '44px'],
         '40-48': ['40px', '48px'],
+        '44-60': ['44px', '60px'],
         100: '100px',
       },
       inset: {

@@ -23,7 +23,7 @@ import { NotFound } from './layout/common/error-page';
 import MyRouter from './layout/common/my-route';
 import './styles/global.scss';
 
-const Home = React.lazy(() => import('pages/home'));
+const Home = React.lazy(() => import('pages/new-home'));
 const ContactUs = React.lazy(() => import('pages/contact-us'));
 const Market = React.lazy(() => import('pages/market/market'));
 const ServiceDetail = React.lazy(() => import('pages/market/service-detail'));
