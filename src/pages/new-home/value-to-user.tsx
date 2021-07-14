@@ -22,7 +22,7 @@ import images from './images';
 
 const ValueToUser = () => {
   return (
-    <div className="bg-scroll bg-cover py-20" style={{ backgroundImage: 'url(/images/home/home-images/value-to-user-bg.png)' }}>
+    <div className="bg-scroll bg-cove pt-24 pb-36" style={{ backgroundImage: 'url(/images/home/home-images/value-to-user-bg.png)' }}>
       <PageContent>
 
         <CopmFadeInUp>

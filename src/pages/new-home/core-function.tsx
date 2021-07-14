@@ -23,7 +23,7 @@ import images from './images';
 const CoreFunction = () => {
   return (
 
-    <PageContent>
+    <PageContent className="mt-24">
 
       <CopmFadeInUp>
         <div className="text-32-44 font-bold text-center">

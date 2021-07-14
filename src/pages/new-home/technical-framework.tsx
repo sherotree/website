@@ -22,7 +22,7 @@ import images from './images';
 
 const TechnicalFrame = () => {
   return (
-    <div className="bg-scroll bg-cover py-20" style={{ backgroundImage: 'url(/images/home/home-images/technical-framework-bg.png)' }}>
+    <div className="bg-scroll bg-cover py-20 mt-24" style={{ backgroundImage: 'url(/images/home/home-images/technical-framework-bg.png)' }}>
       <PageContent>
         <CopmFadeInUp>
           <div className="text-32-44 font-bold text-center">

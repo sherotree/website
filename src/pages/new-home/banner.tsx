@@ -18,6 +18,7 @@ import { Button } from 'antd';
 import { CopmFadeInUp } from 'pages/component/animate-comp';
 import i18n from '~/i18n';
 import images from './images';
+import { CountUp } from 'use-count-up';
 
 const Banner = () => {
   return (
@@ -42,10 +43,12 @@ const Banner = () => {
           </Button>
         </CopmFadeInUp>
         <CopmFadeInUp delay={300}>
-          <div className="mt-64 flex justify-between" >
+          <div className="mt-44 mb-16 flex justify-between" >
             <div className="flex flex-col items-center" >
               <div className="font-bold" >
-                <span className="text-cyan text-44-60">50</span>
+                <span className="text-cyan text-44-60">
+                  <CountUp isCounting end={50} duration={3} />
+                </span>
                 <span className="text-2xl">+</span>
               </div>
               <div>
@@ -57,7 +60,9 @@ const Banner = () => {
             </div>
             <div className="flex flex-col items-center" >
               <div className="font-bold" >
-                <span className="text-cyan text-44-60">100</span>
+                <span className="text-cyan text-44-60">
+                  <CountUp isCounting end={100} duration={3} />
+                </span>
                 <span className="text-2xl">+</span>
               </div>
               <div>
@@ -69,8 +74,10 @@ const Banner = () => {
             </div>
             <div className="flex flex-col items-center" >
               <div className="font-bold" >
-                <span className="text-cyan text-44-60">70</span>
-                <span className="text-2xl">W+</span>
+                <span className="text-cyan text-44-60">
+                  <CountUp isCounting end={70} duration={3} />
+                </span>
+                <span className="text-2xl">w+</span>
               </div>
               <div>
                 <span className="text-base text-desc mt-2
@@ -81,7 +88,9 @@ const Banner = () => {
             </div>
             <div className="flex flex-col items-center" >
               <div className="font-bold" >
-                <span className="text-cyan text-44-60">5</span>
+                <span className="text-cyan text-44-60">
+                  <CountUp isCounting end={5} duration={3} />
+                </span>
                 <span className="text-2xl">+</span>
               </div>
               <div>
@@ -93,7 +102,9 @@ const Banner = () => {
             </div>
             <div className="flex flex-col items-center" >
               <div className="font-bold" >
-                <span className="text-cyan text-44-60">40</span>
+                <span className="text-cyan text-44-60">
+                  <CountUp isCounting end={40} duration={3} />
+                </span>
                 <span className="text-2xl">+</span>
               </div>
               <div>
@@ -105,6 +116,7 @@ const Banner = () => {
             </div>
           </div>
         </CopmFadeInUp>
+        {/* TODO: */}
         <div className="earth">
           <img width={634} height={366} style={{ position: 'absolute', top: '80px', left: '-40px' }} src={images.headerAnimation} alt="" />
         </div>

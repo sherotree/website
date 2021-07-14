@@ -15,14 +15,26 @@
 import React from 'react';
 import PageContent from '~/layout/common/page-content';
 import ImgLazy from 'pages/component/img-lazy';
+import HoverImg from 'pages/component/hover-img';
 import { CopmFadeInUp } from 'pages/component/animate-comp';
+import { map } from 'lodash';
 import { useMobile } from 'common/utils';
 import i18n from '~/i18n';
 import images from './images';
 
 const IndustryPartner = () => {
+  const { partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8, partner9, partner10, partner11, partner12, partner13, partner14, partner15, partner16, partner17, partner18 } = images;
+
+  const { activePartner1, activePartner2, activePartner3, activePartner4, activePartner5, activePartner6, activePartner7, activePartner8, activePartner9, activePartner10, activePartner11, activePartner12, activePartner13, activePartner14, activePartner15, activePartner16, activePartner17, activePartner18 } = images;
+
+  const partnerMap = [partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8, partner9, partner10, partner11, partner12, partner13, partner14, partner15, partner16, partner17, partner18];
+
+  const activePartnerMap = [
+    activePartner1, activePartner2, activePartner3, activePartner4, activePartner5, activePartner6, activePartner7, activePartner8, activePartner9, activePartner10, activePartner11, activePartner12, activePartner13, activePartner14, activePartner15, activePartner16, activePartner17, activePartner18,
+  ];
+
   return (
-    <PageContent>
+    <PageContent className="mt-24">
       <CopmFadeInUp>
         <div className="text-32-44 font-bold text-center">
           助力各行业客户成功
@@ -35,7 +47,12 @@ const IndustryPartner = () => {
       </CopmFadeInUp>
       <div className="flex justify-between items-center mt-16">
         <CopmFadeInUp className="text-center">
-          <ImgLazy width={1184} height={432} src={images.techFrame} />
+          {
+            map(partnerMap, (partner, index) => (
+              <HoverImg width={185.8} height={104} imgSrc={partner} activeImgSrc={activePartnerMap[index]} />
+
+            ))
+          }
         </CopmFadeInUp>
       </div>
     </PageContent>

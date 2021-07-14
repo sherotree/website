@@ -21,6 +21,7 @@ import BasicInfrastructure from './basic-infrastructure';
 import ValueToUser from './value-to-user';
 import CoreFunction from './core-function';
 import TechnicalFrame from './technical-framework';
+import IndustryPartner from './industry-partner';
 import TestManage from './test-manage';
 import PageContent from '~/layout/common/page-content';
 import { CopmFadeInUp } from 'pages/component/animate-comp';
@@ -35,36 +36,27 @@ const Home = () => {
   return (
     <div className="erda-home pt0">
       <Banner />
-      {/* <MainCard /> */}
       <ThreeEngines />
       <BasicInfrastructure />
       <ValueToUser />
       <CoreFunction />
       <TechnicalFrame />
-      <ProjectManagement />
-      <DoubleWing {...HomeConfig.codeRepositories} />
-      <DoubleWing {...HomeConfig.api} />
-      <TestManage {...HomeConfig.testManage} />
-      <DoubleWing {...HomeConfig.cicd} />
-      <DoubleWing {...HomeConfig.monitor} />
-      <DoubleWing {...HomeConfig.log} />
-      <DoubleWing {...HomeConfig.multiCloud} />
-      <DoubleWing {...HomeConfig.fdp} />
-      <div className="contact-trial">
+      <IndustryPartner />
+      <div className="contact-trial bg-scroll bg-cover py-20 mt-20" style={{ backgroundImage: 'url(/images/home/home-images/homepage-end.png)' }} >
         <PageContent>
           <CopmFadeInUp>
-            <p className="title">{i18n.t('what difficulties does your team have in the application development process?')}</p>
+            <p className="text-36-48 text-white text-center">{i18n.t('what difficulties does your team have in the application development process?')}</p>
           </CopmFadeInUp>
           <CopmFadeInUp>
-            <div className="center-flex-box btns mt36">
+            <div className="flex justify-center items-center">
               <div
-                className="btn-item free-trial center-flex-box"
+                className="w-p140 h-12 mx-3 bg-white text-newPrimary text-18-24 flex justify-center items-center rounded-xl cursor-pointer"
                 onClick={() => {
                   window.open('/login-erda');
                 }}
               >{i18n.t('common:free trial')}
               </div>
-              <Link className="btn-item contact center-flex-box" to="/contact">{i18n.t('default:contact us')}</Link>
+              <Link className="w-p140 h-12 mx-3 bg-newPrimary text-white text-18-24 flex justify-center items-center rounded-xl cursor-pointer border-white border border-solid hover:text-newPrimary hover:bg-white" to="/contact">{i18n.t('default:contact us')}</Link>
             </div>
           </CopmFadeInUp>
         </PageContent>

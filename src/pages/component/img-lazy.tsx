@@ -35,6 +35,7 @@ const ImgLazy = ({ className, lazy = true, lazyProps, width, height, ...rest }: 
     once: true,
     ...lazyProps,
   };
+  // TODO: 手机端显示有问题，宽度不应该是 100%
   const imgProps = isMobile ? { ...rest, width: '100%' } : { ...rest, width, height };
   return (
     <div className={cls}>

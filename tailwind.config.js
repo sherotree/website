@@ -24,6 +24,7 @@ module.exports = {
       colors: colorMap,
       spacing: {
         p130: '130px',
+        p140: '140px',
         p224: '224px',
         p400: '400px',
         p430: '430px',
@@ -46,6 +47,7 @@ module.exports = {
         '28-36': ['28px', '36px'],
         '30-38': ['30px', '38px'],
         '32-44': ['32px', '44px'],
+        '36-48': ['36px', '48px'],
         '40-48': ['40px', '48px'],
         '44-60': ['44px', '60px'],
         '46-66': ['46px', '66px'],
@@ -75,7 +77,8 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 };

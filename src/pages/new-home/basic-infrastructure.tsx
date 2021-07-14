@@ -22,10 +22,9 @@ import images from './images';
 
 const BasicInfrastructure = () => {
   return (
-    <div className="erda-home-pm">
       <PageContent>
         <CopmFadeInUp>
-          <div className="text-cyan text-32-44 font-bold text-center mt-36">
+          <div className="text-cyan text-32-44 font-bold text-center mt-24">
             新一代企业数字化基础架构全景图
           </div>
         </CopmFadeInUp>
@@ -33,7 +32,6 @@ const BasicInfrastructure = () => {
           <ImgLazy width={1122} height={560} src={images.infrastructure} />
         </CopmFadeInUp>
       </PageContent>
-    </div>
   );
 };
 
