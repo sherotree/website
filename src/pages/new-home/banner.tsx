@@ -22,7 +22,6 @@ import images from './images';
 const Banner = () => {
   return (
     <div className="erda-home-banner">
-      {/* <div className="erda-home-banner-mask" /> */}
       <PageContent>
         <CopmFadeInUp delay={0}>
           <img width={152} height={38} src={images.headerIcon} alt="" />
@@ -31,7 +30,7 @@ const Banner = () => {
           <div className="text-newPrimary mt-5 text-24-32" >Erda 开源开放，共建研发运营新生态</div>
         </CopmFadeInUp>
         <CopmFadeInUp delay={100}>
-          <div className="text-desc mt-2.5 text-16-32 w-p430 text-justify">包含混合云管理、DevOps、微服务观测治理以及快数据治理等平台级服务能力，为企业和开发者提供稳定可靠、功能全面、兼容生态、开源开放的云原生 PaaS 平台和最佳实践</div>
+          <div className="text-desc mt-3 text-16-32 w-p430 text-justify">包含混合云管理、DevOps、微服务观测治理以及快数据治理等平台级服务能力，为企业和开发者提供稳定可靠、功能全面、兼容生态、开源开放的云原生 PaaS 平台和最佳实践</div>
         </CopmFadeInUp>
         <CopmFadeInUp delay={200}>
           <Button

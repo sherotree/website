@@ -5,6 +5,10 @@ const colorMap = {
   desc: '#666666',
   white: '#ffffff',
   cyan: '#333333',
+  whisper: '#E6E6E6',
+  graniteGray: '#575757',
+  lakegreen: '#B3FFED',
+  algaegreen: '#4FBBA2',
   E1DEFB: 'rgb(225,222,251)',
   '2F3C5F': 'rgb(47,60,95)',
   '0D0C22': 'rgb(13,12,34)',
@@ -20,16 +24,22 @@ module.exports = {
       colors: colorMap,
       spacing: {
         p130: '130px',
+        p224: '224px',
+        p400: '400px',
         p430: '430px',
         p720: '720px',
         p260: '260px',
+        p480: '480px',
         p580: '580px',
+        p866: '866px',
       },
       fontSize: {
         '14-28': ['14px', '28px'],
+        '16-24': ['16px', '24px'],
         '16-28': ['16px', '28px'],
         '16-32': ['16px', '32px'],
         '18-24': ['18px', '24px'],
+        '18-28': ['18px', '28px'],
         '20-28': ['20px', '28px'],
         '20-32': ['20px', '32px'],
         '24-32': ['24px', '32px'],
@@ -38,6 +48,7 @@ module.exports = {
         '32-44': ['32px', '44px'],
         '40-48': ['40px', '48px'],
         '44-60': ['44px', '60px'],
+        '46-66': ['46px', '66px'],
         100: '100px',
       },
       inset: {
@@ -56,6 +67,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         'gradient-more': 'linear-gradient(180deg, rgba(255,255,255,0.25) 0%, #FFFFFF 46%, #FFFFFF 100%)',
       }),
+
       boxShadow: {
         card08: '0 4px 16px 2px rgba(92, 77, 237, 0.08)',
         card2: '0 4px 16px 2px rgba(92, 77, 237, 0.2)',

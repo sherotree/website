@@ -16,6 +16,11 @@ import React from 'react';
 import Banner from './banner';
 import MainCard from './main-card';
 import ProjectManagement from './project-manage';
+import ThreeEngines from './three-engines';
+import BasicInfrastructure from './basic-infrastructure';
+import ValueToUser from './value-to-user';
+import CoreFunction from './core-function';
+import TechnicalFrame from './technical-framework';
 import TestManage from './test-manage';
 import PageContent from '~/layout/common/page-content';
 import { CopmFadeInUp } from 'pages/component/animate-comp';
@@ -31,6 +36,11 @@ const Home = () => {
     <div className="erda-home pt0">
       <Banner />
       {/* <MainCard /> */}
+      <ThreeEngines />
+      <BasicInfrastructure />
+      <ValueToUser />
+      <CoreFunction />
+      <TechnicalFrame />
       <ProjectManagement />
       <DoubleWing {...HomeConfig.codeRepositories} />
       <DoubleWing {...HomeConfig.api} />
