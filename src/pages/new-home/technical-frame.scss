@@ -1,0 +1,89 @@
+.bar {
+  width: 99px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    #ffb3ea 0%,
+    #bb4f9e 10%,
+    #c7b3ff 10%,
+    #6b4fbb 60%,
+    #b3c4ff 60%,
+    #4f68bb 75%,
+    #b3eaff 75%,
+    #4f9ebb 100%
+  );
+  border-radius: 100px 0 0 100px;
+}
+
+.a-ball {
+  position: absolute;
+  top: -8px;
+  z-index: 10;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(
+    #ffb3ea 0%,
+    #bb4f9e 90%,
+    rgba(255, 179, 234, 0.2) 100%
+  );
+  border-radius: 50%;
+}
+
+.a-ball-1 {
+  background: #c7b3ff;
+  animation-name: ball1;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ball1 {
+  from {
+    left: 0;
+    transform: translateX(0) rotate(0deg);
+  }
+
+  to {
+    left: 10%;
+    transform: translateX(10%) rotate(360deg);
+  }
+}
+
+.a-ball-2 {
+  background: #b3c4ff;
+  animation-name: ball2;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ball2 {
+  from {
+    left: 10%;
+  }
+
+  to {
+    left: 60%;
+  }
+}
+
+.a-ball-3 {
+  background: #b3eaff;
+  animation-name: ball3;
+  animation-duration: 1s;
+  animation-delay: 4s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ball3 {
+  from {
+    left: 60%;
+  }
+
+  to {
+    left: 75%;
+  }
+}

@@ -22,16 +22,16 @@ import images from './images';
 
 const BasicInfrastructure = () => {
   return (
-      <PageContent>
-        <CopmFadeInUp>
-          <div className="text-cyan text-32-44 font-bold text-center mt-24">
-            新一代企业数字化基础架构全景图
-          </div>
-        </CopmFadeInUp>
-        <CopmFadeInUp className="mt-20 text-center">
-          <ImgLazy width={1122} height={560} src={images.infrastructure} />
-        </CopmFadeInUp>
-      </PageContent>
+    <PageContent>
+      <CopmFadeInUp>
+        <div className="text-cyan text-32-44 font-bold text-center mt-24">
+          新一代企业数字化基础架构全景图
+        </div>
+      </CopmFadeInUp>
+      <CopmFadeInUp className="mt-20 text-center">
+        <ImgLazy width={1122} height={560} src={images.infrastructure} />
+      </CopmFadeInUp>
+    </PageContent>
   );
 };
 

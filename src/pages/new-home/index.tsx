@@ -20,7 +20,7 @@ import ThreeEngines from './three-engines';
 import BasicInfrastructure from './basic-infrastructure';
 import ValueToUser from './value-to-user';
 import CoreFunction from './core-function';
-import TechnicalFrame from './technical-framework';
+import TechnicalFrame from './technical-frame';
 import IndustryPartner from './industry-partner';
 import TestManage from './test-manage';
 import PageContent from '~/layout/common/page-content';
@@ -48,7 +48,7 @@ const Home = () => {
             <p className="text-36-48 text-white text-center">{i18n.t('what difficulties does your team have in the application development process?')}</p>
           </CopmFadeInUp>
           <CopmFadeInUp>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center mt-9">
               <div
                 className="w-p140 h-12 mx-3 bg-white text-newPrimary text-18-24 flex justify-center items-center rounded-xl cursor-pointer"
                 onClick={() => {

@@ -19,6 +19,7 @@ import { CopmFadeInUp } from 'pages/component/animate-comp';
 import { useMobile } from 'common/utils';
 import i18n from '~/i18n';
 import images from './images';
+import './technical-frame.scss';
 
 const TechnicalFrame = () => {
   return (
@@ -39,6 +40,15 @@ const TechnicalFrame = () => {
             <ImgLazy width={1184} height={432} src={images.techFrame} />
           </CopmFadeInUp>
         </div>
+        <CopmFadeInUp>
+          <div className="relative">
+            <div className="w-full h-1 bar" />
+            <div className="a-ball a-ball-1" />
+            <div className="a-ball a-ball-2" />
+            <div className="a-ball a-ball-3" />
+            <div className="a-ball a-ball-4" />
+          </div>
+        </CopmFadeInUp>
       </PageContent>
 
     </div>

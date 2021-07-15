@@ -7,6 +7,7 @@ const colorMap = {
   cyan: '#333333',
   whisper: '#E6E6E6',
   graniteGray: '#575757',
+  sliverGray: '#B2B2B2',
   lakegreen: '#B3FFED',
   algaegreen: '#4FBBA2',
   E1DEFB: 'rgb(225,222,251)',
