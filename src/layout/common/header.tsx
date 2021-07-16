@@ -43,7 +43,7 @@ const Header = ({ onChangeVisible, path }: IProps) => {
   const userData = userStore.useStore((s) => s.user);
   const { getCurrentUser } = userStore.effects;
   const [{ whiteHeader, headerShadow }] = useSiteEnv();
-
+  const isColorfulLogo = flexHeader || whiteHeader || showHeaderDrawer;
   React.useEffect(() => {
     getCurrentUser();
     lastTop.current = getScrollTop();
@@ -97,10 +97,10 @@ const Header = ({ onChangeVisible, path }: IProps) => {
     <header className={cls} onMouseEnter={() => toggleMenu(true)} onMouseLeave={() => toggleMenu(false)}>
       <div className="site-header-wrap">
         <Link className="logo" aria-label="go to home page" to="/">
-          <Icon className="site-logo" type="logo2" />
+          <img width={155} height={40} src={isColorfulLogo ? '/images/logo-colorful.png' : '/images/logo-white.png'} />
         </Link>
         <IntroMenu page={path} handlevisibleChange={handlevisibleChange} />
-        {isEmpty(userData) ? <LoginPanel /> : <UserInfo/>}
+        {isEmpty(userData) ? <LoginPanel /> : <UserInfo />}
         {/* since the Marketplace and case don't support i18n, hide this button first */}
         {/* <Popover content={i18n.t('common:switch language')} placement="bottom" getPopupContainer={(e) => e.parentElement}> */}
         {/*  <Icon onClick={switchLocale} className="switch-lang ml12" type="i18n" /> */}
